@@ -1,0 +1,32 @@
+#服务端口
+server:
+  port: 8088
+#数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/strore?character=utf-8&serverTimezone=UTC
+  redis:   #redis配置
+    host: 127.0.0.1
+    port: 6379
+    password: root
+mybatis: #整合mybatis配置
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.zxst.shoop.entity
+
+alinfo:
+  oss-endpoint: oss-cn-qingdao.aliyuncs.com
+  oss-accesskeyid: LTAI5tNabZwaUbviMbzmdcE8
+  oss-accesskeysecret: k83ebE2XVBR02DCDInHNSumjfojYHr
+  oss-bucketname: zxst-shoop-new
+#每个用户最多10个地址
+user:
+  address:
+    max-count: 10
+
+
